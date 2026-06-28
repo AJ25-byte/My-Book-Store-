@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vibe-Reading & Media App</title>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle">Toggle Magic Theme</button>
+    
+    <!-- Your content goes here -->
+    <div class="grid-container">
+        <!-- Books/Music go here -->
+    </div>
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    
+    // Check if the user previously chose the magic theme
+    if (localStorage.getItem('site-theme') === 'theme-magic') {
+        document.body.classList.add('theme-magic');
+    }
 
-<<link rel="apple-touch-icon" href="favicon.png">>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Quicksand:wght@300;400&display=swap" rel="stylesheet"/head>
+    // Toggle the theme when the button is clicked
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('theme-magic');
+        
+        // Save the current state
+        if (document.body.classList.contains('theme-magic')) {
+            localStorage.setItem('site-theme', 'theme-magic');
+        } else {
+            localStorage.setItem('site-theme', 'default');
+        }
+    });
+</script>
 
-  <!--Tab to edit-->
-<>
-<{ #theme-toggle(theme-magic)}>
-  
-
-
+</body>
 </html>
