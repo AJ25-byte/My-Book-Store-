@@ -1,0 +1,39 @@
+/* Reset and Base Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background-color: #050505;
+    color: #d4af37; /* Gold */
+    font-family: 'Georgia', serif;
+    padding: 20px;
+}
+
+/* Glassmorphism Panel Effect */
+.grid-container, #music-list {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+h1, h2 {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsive Grid for Books */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+#music-list {
+    list-style: none;
+}
+
+#music-list li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
