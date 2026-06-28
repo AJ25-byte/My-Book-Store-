@@ -35,11 +35,5 @@ h1, h2 {
 
 #music-list li {
     padding: 10px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-}
-Background: a midnight-blue-to-twilight-purple diagonal gradient (#0a0f24 → #150f2e → #3b2d56)
-Glass panels: .grid-container and #music-list get a softer twilight tint with a glowing purple/silver box-shadow instead of the gold border
-Cards: each child of .grid-container (your book cards) gets a gentle gradient fill plus a magic-float keyframe animation — a slow 6s up/down drift, staggered via nth-child so cards don't bob in sync
-Sparkle accents: a .sparkle utility class (put it on small icons/dots you want to twinkle) with a 2.4s opacity/scale pulse, also staggered
-Ambient glow: a ::after radial-gradient overlay on the glass panels for extra dreamy depth
-Typography: switches body font to Quicksand/Poppins for a softer, whimsical feel while keeping Playfair Display for headings (now with a soft cyan/purple text-glow)
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);}
+    
