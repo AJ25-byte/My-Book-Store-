@@ -36,4 +36,94 @@ h1, h2 {
 #music-list li {
     padding: 10px;
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);}
-    
+    /* 1. Base Setup & Resets */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #050505;
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* 2. Glassmorphism Panels */
+.grid-container, #music-list {
+    background: rgba(255, 255, 255, 0.03); /* Lighter transparency for better glass look */
+    backdrop-filter: blur(15px); /* Increased blur for more depth */
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px; /* Softer corners */
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+h1, h2 {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* 3. Book Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.book-card { text-align: center; }
+.book-card img {
+    width: 100%;
+    aspect-ratio: 2/3; /* Keeps covers consistent */
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* 4. Music List refinement */
+#music-list { list-style: none; }
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* 5. Fixed Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(5, 5, 5, 0.95); /* More solid to hide content behind */
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 12px 0;
+    z-index: 100; /* Ensures it stays on top */
+}
+
+.nav-item {
+    color: rgba(212, 175, 55, 0.6);
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item:active {
+    color: #d4af37;
+}
+
+.nav-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+/* 6. Media Queries */
+@media (max-width: 480px) {
+    .grid-container { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .bottom-nav { padding: 8px 0; }
+}
