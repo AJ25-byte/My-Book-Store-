@@ -1,87 +1,39 @@
 <!DOCTYPE html>
 <html>
-<<link rel="stylesheet" href="style.css">
->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vibe-Reading & Media App</title>
-    <link rel="apple-touch-icon" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <title>Vibe Reading & Media App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <button id="theme-toggle">Toggle Magic Theme</button>
-
-  <div class="app-shell">
-    <header class="profile-bar">
-        </header>
-
-    <main class="content-area">
-      <section class="content-section" id="books-section">
-        <h2>Books</h2>
-        <div class="grid-container">
-          </div>
-      </section>
-
-      <section class="content-section" id="music-section">
-        <h2>Music</h2>
-        <ul id="music-list">
-          </ul>
-      </section>
-    </main>
-
-    <nav class="bottom-nav">
-      <a href="#" class="nav-item">Home</a>
-      <a href="#" class="nav-item">Music</a>
-      <a href="#" class="nav-item">Books</a>
-      <a href="#" class="nav-item">Sub</a>
-    </nav>
-  </div>
-
-</body>
-
     <button id="theme-toggle">Toggle Magic Theme</button>
-    
-    <!-- Your content goes here -->
-   <div class="grid-container">
-    <article class="book-card">
-        <img src="YOUR_BOOK_COVER_IMAGE_URL" alt="Book Title">
-        <h3 class="book-title">Name of Book</h3>
-        <p class="book-author">Author Name</p>
-    </article>
-</div>
 
-        <ul id="music-list">
-    <li class="track-item">
-        <img class="track-art" src="YOUR_ALBUM_ART_URL" alt="Album Art">
-        <div class="track-info">
-            <span class="track-title">Song Name</span>
-            <span class="track-artist">Artist Name</span>
-        </div>
-        <span class="track-duration">3:45</span>
-    </li>
-</ul>
+    <div class="app-shell">
+        <header class="profile-bar">
+            </header>
 
-    <script>
+        <main class="content-area">
+            <section class="content-section" id="books-section">
+                <h2>Books</h2>
+                <div class="grid-container"></div>
+            </section>
 
-    // Check if the user previously chose the magic theme
-    if (localStorage.getItem('site-theme') === 'theme-magic') {
-        document.body.classList.add('theme-magic');
-    }
+            <section class="content-section" id="music-section">
+                <h2>Music</h2>
+                <ul id="music-list"></ul>
+            </section>
+        </main>
 
-    // Toggle the theme when the button is clicked
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('theme-magic');
-        
-        // Save the current state
-        if (document.body.classList.contains('theme-magic')) {
-            localStorage.setItem('site-theme', 'theme-magic');
-        } else {
-            localStorage.setItem('site-theme', 'default');
-        }
-    });
-</script>
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Music</a>
+            <a href="#" class="nav-item">Books</a>
+            <a href="#" class="nav-item">Sub</a>
+        </nav>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
