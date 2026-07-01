@@ -35,3 +35,18 @@ h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing:
 }
 .nav-item { color: rgba(212, 175, 55, 0.6); text-decoration: none; font-size: 0.7rem; text-align: center; }
 .nav-icon { display: block; font-size: 1.5rem; }
+/* Styling for individual books */
+.book-card {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+}
+
+/* Ensure the grid displays properly */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
