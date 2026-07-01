@@ -1,4 +1,4 @@
-// Fetch data from the JSON file and display it
+// 1. Fetch data from the JSON file and display it
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -10,10 +10,9 @@ fetch('data.json')
             div.className = 'book-card';
             div.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p>`;
             
-            // Add interaction: Highlight on click
             div.addEventListener('click', () => {
                 document.querySelectorAll('.book-card').forEach(b => b.style.borderColor = 'rgba(212, 175, 55, 0.2)');
-                div.style.borderColor = '#d4af37'; // Highlight color
+                div.style.borderColor = '#d4af37';
             });
             grid.appendChild(div);
         });
@@ -23,30 +22,26 @@ fetch('data.json')
         musicList.innerHTML = '';
         data.songs.forEach(song => {
             const li = document.createElement('li');
-            li.className = 'track-item'; // Added a class for styling
+            li.className = 'track-item';
             li.textContent = `${song.title} - ${song.artist}`;
             
-            // Add interaction: Highlight on click
             li.addEventListener('click', () => {
                 document.querySelectorAll('.track-item').forEach(t => t.style.color = '#d4af37');
-                li.style.color = '#ffffff'; // Selected color
+                li.style.color = '#ffffff';
             });
             musicList.appendChild(li);
         });
     })
     .catch(error => console.error('Error loading data:', error));
 
-
-// 2. Theme Toggle & Persistence Logic
-const themeToggle = document.getElementById('theme-toggle');
+// 2. Navigation & Theme Persistence Logic
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Define the elements
+    // Navigation
     const booksSection = document.getElementById('books-section');
     const musicSection = document.getElementById('music-section');
     const navBooks = document.getElementById('nav-books');
     const navMusic = document.getElementById('nav-music');
 
-    // 2. Add the click listeners
     navBooks.addEventListener('click', () => {
         booksSection.classList.add('active');
         musicSection.classList.remove('active');
@@ -57,19 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         booksSection.classList.remove('active');
     });
 
-// Check for saved theme on page load
-if (localStorage.getItem('theme') === 'magic') {
-    document.body.classList.add('magic-theme');
-    themeToggle.textContent = 'Back to Dark Mode';
-}
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
 
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('magic-theme');
-    
-    // Save the user's choice
-    if (document.body.classList.contains('magic-theme')) {
-        localStorage.setItem('theme', 'magic');
+    if (localStorage.getItem('theme') === 'magic') {
+        document.body.classList.add('magic-theme');
         themeToggle.textContent = 'Back to Dark Mode';
-    } else {
-        localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = 'Toggle Magic Theme';}
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('magic-theme');
+        
+        if (document.body.classList.contains('magic-theme')) {
+            localStorage.setItem('theme', 'magic');
+            themeToggle.textContent = 'Back to Dark Mode';
+        } else { 
+            localStorage.setItem('theme', 'dark');
+            themeToggle.textContent = 'Toggle Magic Theme';
+        }
+    });
+});
