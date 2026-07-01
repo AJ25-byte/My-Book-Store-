@@ -60,3 +60,18 @@ h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing:
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: #d4af37; /* Matches your gold theme */
 }
+/* Light/Magic Theme */
+body.magic-theme {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+body.magic-theme .grid-container, 
+body.magic-theme #music-list {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body.magic-theme h1, body.magic-theme h2 {
+    color: #2c3e50;
+}

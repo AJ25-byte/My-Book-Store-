@@ -50,3 +50,16 @@ function displayMusic() {
 
 // Run the function
 displayMusic();
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+    // This toggles the 'magic-theme' class on the body element
+    document.body.classList.toggle('magic-theme');
+    
+    // Optional: Update button text
+    if (document.body.classList.contains('magic-theme')) {
+        themeToggle.textContent = 'Back to Dark Mode';
+    } else {
+        themeToggle.textContent = 'Toggle Magic Theme';
+    }
+});
