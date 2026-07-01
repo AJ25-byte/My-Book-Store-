@@ -28,3 +28,25 @@ function displayBooks() {
 
 // Run the function
 displayBooks();
+// ... existing book code stays at the top ...
+
+// Add this at the very end of your script.js file:
+
+const songs = [
+    { title: "Song One", artist: "Artist A" },
+    { title: "Song Two", artist: "Artist B" }
+];
+
+const musicList = document.getElementById('music-list');
+
+function displayMusic() {
+    musicList.innerHTML = '';
+    songs.forEach(song => {
+        const li = document.createElement('li');
+        li.textContent = `${song.title} - ${song.artist}`;
+        musicList.appendChild(li);
+    });
+}
+
+// Run the function
+displayMusic();

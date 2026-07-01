@@ -50,3 +50,13 @@ h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing:
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
 }
+#music-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+}
+
+#music-list li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #d4af37; /* Matches your gold theme */
+}
