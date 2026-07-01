@@ -1,6 +1,13 @@
 /* 1. Base Setup */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: #050505; color: #d4af37; font-family: 'Georgia', serif; padding: 20px; line-height: 1.6; }
+body { 
+    background-color: #050505; 
+    color: #d4af37; 
+    font-family: 'Georgia', serif; 
+    padding: 20px; 
+    line-height: 1.6;
+    transition: all 0.3s ease; 
+}
 
 /* 2. Glassmorphism Panels */
 .grid-container, #music-list {
@@ -17,11 +24,19 @@ body { background-color: #050505; color: #d4af37; font-family: 'Georgia', serif;
 h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing: 1px; margin-bottom: 10px; }
 
 /* 4. Book Grid */
-.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
 
 /* 5. Music List */
-#music-list { list-style: none; }
-.track-item { display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+#music-list {
+    list-style: none;
+    padding: 0;
+}
+
+#music-list li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #d4af37;
+}
 
 /* 6. Navigation Ribbon */
 .bottom-nav {
@@ -34,7 +49,7 @@ h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing:
     z-index: 100;
 }
 .nav-item { color: rgba(212, 175, 55, 0.6); text-decoration: none; font-size: 0.7rem; text-align: center; }
-.nav-icon { display: block; font-size: 1.5rem; }
+
 /* Styling for individual books */
 .book-card {
     padding: 15px;
@@ -44,22 +59,6 @@ h1, h2 { color: #d4af37; font-family: 'Playfair Display', serif; letter-spacing:
     margin-bottom: 10px;
 }
 
-/* Ensure the grid displays properly */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-}
-#music-list {
-    list-style: none; /* Removes bullet points */
-    padding: 0;
-}
-
-#music-list li {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #d4af37; /* Matches your gold theme */
-}
 /* Light/Magic Theme */
 body.magic-theme {
     background-color: #f0f0f0;
