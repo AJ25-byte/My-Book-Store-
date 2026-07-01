@@ -34,12 +34,19 @@ h1, h2 {
 .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
 
 /* 5. Music List */
-#music-list { list-style: none; padding: 0; }
-#music-list li {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #d4af37;
+#music-list {
+    list-style: none;
+    padding: 0;
 }
+
+/* Paste this here */
+.track-item { 
+    padding: 10px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+
 
 /* 6. Navigation Ribbon */
 .bottom-nav {

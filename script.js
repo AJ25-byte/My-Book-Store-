@@ -1,29 +1,41 @@
-// 1. Fetch data from the JSON file and display it
+// Fetch data from the JSON file and display it
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
         // Display Books
         const grid = document.querySelector('.grid-container');
-        // Clear any existing content first
         grid.innerHTML = ''; 
         data.books.forEach(book => {
             const div = document.createElement('div');
             div.className = 'book-card';
             div.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p>`;
+            
+            // Add interaction: Highlight on click
+            div.addEventListener('click', () => {
+                document.querySelectorAll('.book-card').forEach(b => b.style.borderColor = 'rgba(212, 175, 55, 0.2)');
+                div.style.borderColor = '#d4af37'; // Highlight color
+            });
             grid.appendChild(div);
         });
 
         // Display Music
         const musicList = document.getElementById('music-list');
-        // Clear any existing content first
         musicList.innerHTML = '';
         data.songs.forEach(song => {
             const li = document.createElement('li');
+            li.className = 'track-item'; // Added a class for styling
             li.textContent = `${song.title} - ${song.artist}`;
+            
+            // Add interaction: Highlight on click
+            li.addEventListener('click', () => {
+                document.querySelectorAll('.track-item').forEach(t => t.style.color = '#d4af37');
+                li.style.color = '#ffffff'; // Selected color
+            });
             musicList.appendChild(li);
         });
     })
     .catch(error => console.error('Error loading data:', error));
+
 
 // 2. Theme Toggle & Persistence Logic
 const themeToggle = document.getElementById('theme-toggle');
