@@ -72,22 +72,4 @@ themeToggle.addEventListener('click', () => {
         themeToggle.textContent = 'Back to Dark Mode';
     } else {
         localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = 'Toggle Magic Theme';
-    }
-});
-// Navigation Switching Logic
-const booksSection = document.getElementById('books-section');
-const musicSection = document.getElementById('music-section');
-const navBooks = document.getElementById('nav-books');
-const navMusic = document.getElementById('nav-music');
-
-navBooks.addEventListener('click', () => {
-    booksSection.classList.add('active');
-    musicSection.classList.remove('active');
-});
-
-navMusic.addEventListener('click', () => {
-    musicSection.classList.add('active');
-    booksSection.classList.remove('active');
-});
-
+        themeToggle.textContent = 'Toggle Magic Theme';}
