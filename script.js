@@ -25,17 +25,25 @@ fetch('data.json')
     })
     .catch(error => console.error('Error loading data:', error));
 
-// 2. Theme Toggle Logic
+// 2. Theme Toggle & Persistence Logic
 const themeToggle = document.getElementById('theme-toggle');
 
+// Check for saved theme on page load
+if (localStorage.getItem('theme') === 'magic') {
+    document.body.classList.add('magic-theme');
+    themeToggle.textContent = 'Back to Dark Mode';
+}
+
 themeToggle.addEventListener('click', () => {
-    // Toggle the class on the body
     document.body.classList.toggle('magic-theme');
     
-    // Update button text
+    // Save the user's choice
     if (document.body.classList.contains('magic-theme')) {
+        localStorage.setItem('theme', 'magic');
         themeToggle.textContent = 'Back to Dark Mode';
     } else {
+        localStorage.setItem('theme', 'dark');
         themeToggle.textContent = 'Toggle Magic Theme';
     }
 });
+
