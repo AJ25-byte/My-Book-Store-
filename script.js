@@ -39,6 +39,23 @@ fetch('data.json')
 
 // 2. Theme Toggle & Persistence Logic
 const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Define the elements
+    const booksSection = document.getElementById('books-section');
+    const musicSection = document.getElementById('music-section');
+    const navBooks = document.getElementById('nav-books');
+    const navMusic = document.getElementById('nav-music');
+
+    // 2. Add the click listeners
+    navBooks.addEventListener('click', () => {
+        booksSection.classList.add('active');
+        musicSection.classList.remove('active');
+    });
+
+    navMusic.addEventListener('click', () => {
+        musicSection.classList.add('active');
+        booksSection.classList.remove('active');
+    });
 
 // Check for saved theme on page load
 if (localStorage.getItem('theme') === 'magic') {
